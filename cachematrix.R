@@ -29,6 +29,11 @@ cachemean <- function(x, ...) {
 
 ## Write a short comment describing this function
 
+# this method creates a list of functions that are used to cache a matrix and its inversion.
+# the cache variable contains the invertion
+# the x variable contains the matrix
+# the get and set methods concern the matrix
+# the setCache and getCache methods concern the inversion
 makeCacheMatrix <- function(x = matrix()) {
   cache <- NULL
   set <- function(y) {
@@ -47,6 +52,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+# the cacheSolve function inverts a matrix if the matrix has not been
+# inverted. Otherwise, the cacheSolve function retrieves the cached version
+# of the inverted matrix.
+#
+# the cacheSolve function takes advantage of the functions returned by the
+# matkeCacheMatrix function.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   cache <- x$getCache()
